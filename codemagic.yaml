@@ -12,7 +12,7 @@ workflows:
                 CM_KEY_ALIAS_PASSWORD: Encrypted(Z0FBQUFBQmd2ZTlFdVhUOUFod1J0Q0FlMnZqX0M1Y01HV0pTNDBXLURRREhHMXR3V0xQM0hnd1B4SmdSUGRJc3hZS21BZFZxVGpyZ2VYNTVlV2cwbDVjU2d4R3ZTaWVtREE9PQ==) # <-- Put your encrypted keystore alias password here
                 CM_KEY_ALIAS_USERNAME: Encrypted(Z0FBQUFBQmd2Zkhja2lnM2w2Z1Z2ZWNpc05VOUw5WjVkWkdwczVxb2FYUzJiOS1STWNRT21ZdTBuN1EtajRPOHdwOFNrM1dUbjBIMmN3bkN3REdzN24za1l4aGYtOG84eFE9PQ==) # <-- Put your encrypted keystore alias username here 
             node: latest
-       triggering:
+        triggering:
             events:
                 - push
                 - tag
@@ -50,9 +50,8 @@ workflows:
             # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
             email:
                 recipients:
-                    - saurabh.rajput@sumasoft.net
-                    - mahendra.raut@sumasoft.net
-                    - supriya.malusare@sumasoft.net
+                    - user_1@example.com
+                    - user_2@example.com
                 notify:
                   success: true     # To not receive a notification when a build succeeds
                   failure: false    # To not receive a notification when a build fails
@@ -62,7 +61,7 @@ workflows:
               notify_on_build_start: true   # To receive a notification when a build starts
               notify:
                 success: true               # To not receive a notification when a build succeeds
-                failure: true              # To not receive a notification when a build fails
+                failure: false              # To not receive a notification when a build fails
             #google_play:
               # See the following link for information regarding publishing to Google Play - https://docs.codemagic.io/publishing-yaml/distribution/#google-play
               #credentials: Encrypted(Z0FBQUFBQmd2ZjRXYnF4LUllTVp5Mi1LMV9hcU1ucjYxWHpLVVlKdDBoUi1yOGY2ODNsRTJEakN4T0otXzlaYzRWWmdjemZIM0EtakdrTWFpTE5pY0wwRElXcXhYb3NRWXIwRUZ4cFZBWEYwTGpiVmdOdmxkbVVqTjlkdlRfek5DTGY3M3AxRVVqZkkwV0l4bGFvellKVU5wQmgzS1dnMnM0aHFyRjRLRkQ5ejJHa0l6SmpKQkZpaGI2ODhQUk4xOUpmaGdOTk5YRVpFRlVva19HbXB1aS1kM25WaXJxajl4bnBFNWdqTVZOQW4tVEQ3R09kZm1kS3FBeU9DR1JNUnltcmRlQzJid01xSmUyU0xWVW55bGk2SzFPRVZla1JDTlRhOFVXVW9FT1U3U2N4NkxxZG1ZMEpRN1N3bjBaUDl3OVpSdER2OU9LZm0zTmlvR25GTHVUaHZLNFZWSWNuVnhhYnFpVjlTTENiSTNXTDcyTEpBLUowWVd6TWlscmVEMTdaSXFtNjBXazdoUWZKSHZ1dDNiREZiVHdkLXlTQXE1amVoRTNSdUs3cE40Z3c5MkpGTHl6dnVYX0M5ZGxlQUx5aFZBMGlES1pOd1p5OWhaTXBmaU9KczlDY0tFZE91SUtmX0x2VlJwNDJvSFBfSnRMSXNKU2pWY2RiMHM4ZFVaZjJIVVliTlRNTHJwUWRlb1pFQmNKcDNIalVXRDVTa2QxcGs4cVFBMUs2YVlQV2ZPZURiSXotRE9Cc0UxVWdqajBEaUJpa0VBXzlwYzRfcS1ENWZ2VDY5NnRIU05zU2hjRVBDMGl3VF9za2lPUlJqT2JTdnhNbVNELWdIQVlyZzdETXBCRUdCZHQwM0YzTmVYaDNJZURYY1Z1ZXd6Z1FpNjZybVhJc2VEUXJnNk5Rc3N3dzY5S0VYNENiTXU1R1hlU2MyckF2ZF9QZjBYdmJSemQ0ekpJdmtHNEpBS05lWGNkcDRzeG44cHNCaVJ0bTZ4ODVCNGdHT09sQ3Uwc01wd1NzTEZUUmpqU3RWRTlYbXBHUUR3RkE5aVpIUm1pVTRCdmFUYWdEdGhEZVRnN2oxM2ZfRnJybEdXM0RDWDVmbmxzM3hsek9SY2dDenkycUVLMGJqQVBuVDVkd2EyLVRiQlFuTU1OX0w5X3Z1ZHYyYTMxQk1UZkJzODFiNm9lejFBUjIwclVBb2JqeWlLNnFMNER0U3RBVXI4SGJUZ3VoZlFITE4wUXBrUmlvVWpWT3ZHYmF2VFdlakMwR1pfaDRncEQxcmRjV3JSN0hIa2ZOc19Ra2VpaTdrS3Q4R0RYZGd4UUlQOHlfbDhWZUZXUUZqWTc1WjFRWDFVcUtQbVA1X25weDZKMmo0T1FQazZIc1lZQk5MRDIwc0J5Ym5fWFJQcjdHUzFQLWgyZkVMNXBOc1VQLVFYYzJoUmJGdTdSci1IdjNzR3RBYTRCb1RvWUw1a3NYWUhDb2F0M2QxaW9BNzVYNWpWaUtmN1owUmxQaDI3c1JfQm1LX3FoOWo2aGNlR0xiNjVULXoxQ0JIR0pxd2RKUG1zOEljalJtUElBYjN0b2kzdWtmZlU0Q0J6WTNGMmZtcUg1bGlVbXBFQlliRUpZaXpxTFdWcEZxZkNjdENvYmMwOC1fRktHQlJsZjM5Mko5WG1IbW5Bd08xNlBTTzNJR3g5Z2ZxVDlNME5kdF9aWFRkbGVwMjhVTlM2WFA1aG1iVjFUdDBzWjRndjZWSGhVVWNDTGVKUVpJLUdlVW5uOVYtZHVQTUhXdUJic1VUZXF6TW5FWWpSRFI0MjlyeS1qdk96TzlKUktLN1N1V2tBSllUUjZCakZDcE82WXNFeWhUY1UzUlE3blFZSFdMbnF3dXVtUFFLTTJFN2tQalJKbzB3ZmZxSWFrRUE3bVB5c2FOaF9UUEVkdHV2ckxCMFVJR2NIalNjQzY5Y2tGV2dab0VOSkhxeFhQVmJhaHhBMGwtb1hrY3hUTWcxdS16ejk1dkJyUFZXWURSX0JEb1lOTkRvLXVzbV9vNlhYSFVCYXRXNmlIWEt1dG1Hb1prbllQMGc5S2pXYVI4VDl6YjUxNGVpOXdUeTlXbFNHUHd5Qk1XLWdhTEdiWVFSM0FOamwtc2JBdURtV0ExbjVQX3BHTldjZXFJWUNrNk9ZWnMxblQwZ2FOMGtWMVhxTm9VMEpuc1dhb0otSk1neU9GNDNnUUczZE1xZjFjQ2dQNlJlV01HRmo3cGUwc0c4dUozcEtWa2NHS09hdmpnbDF2LW0xS2FKZVVLLWEwb0ZFR1pKZWZGSS1rLWJDaWhxUFl4M0cwT0ppandMZTVfUWJNY2x2MmcxbENVNkxZd1FpYTk0Z09EMmtPTHRqRWhtS1JiUG5qTERkUzNjQWFBMW4yeXF3Um9icTM1T0I4c2UwdEhaTk5mN25uaHMwdkxXRFZ6anFPNWRtZjlaSWpsRFFCRl8tazhkcGdJNVZhZ216Ul9CdXJITmpWRnZ6cG52ZDgwMkR4R3FBWll6MzZISkl0TEZTMHFaNk1YY1VVd0h6aHRDZzd6Sk9QazAxc3hGSUxQV0hlYk14R0NRckRKRGUzRnV1d19FdzVIRmpCeWZGenR0ZkpQcnJDMDdFUkFMenk3SFphTmdXMXN1eU1neGJ6cS03WDNCOGo5aldNRmliSXprVEgzakZIYVdLbG1nREVhVjlwNy1WUWhTYy0xUkNhTHpCSTNIV3JGRE1YVlJfUE1SV1dNNkxyY05oYmhoYUMyM0kzTi1nTUV4VlE3S2Q2a2tyeVltRXNtb3ctZFRmOVpaaDN6MS1Lc0otLUJ2NkZiT1drbWplZDVVMENyd0NPOUg0NmVmZEhtQ1AyTWZpXzFjczBIUkZXY2lkcWJkbzNQT1hPZG1JR1BweEVJRUtzWjJreTlXUUhzNmhMVnRaM3ZsZGNueHROYW4wcDk5dzgtaXFpeC16NnhaZ1c3Q3ZJV1JISzlsM05pTzVWemVkZ0dGUlhGT0VzbFpoT1ZhNTBJMl9BdjQwNVpFSk1oRU9tT1p4djRrbWNtTVFBZDFvTXo1V2N3Uy1FRXJOajNoVG5rd3AyOVlHbjNjNWZHZjRaaU5BYzNCZ0RSRHZjS0FxUUtORUJqV01oTEc5WDBOVlRtSG94MWg1ZG9Mb18xSUl1X1FnelFqMXpZR3N3MzBjWnh5WlFCTVRjclg2X1BubnJTUVpXTjBVemY5MjdrR3NxcEpnZEtkTUF4cmVPSDI=) # <-- Put your encrypted google-services.json here
