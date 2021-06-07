@@ -12,7 +12,7 @@ workflows:
                 CM_KEY_ALIAS_PASSWORD: Encrypted(Z0FBQUFBQmd2ZTlFdVhUOUFod1J0Q0FlMnZqX0M1Y01HV0pTNDBXLURRREhHMXR3V0xQM0hnd1B4SmdSUGRJc3hZS21BZFZxVGpyZ2VYNTVlV2cwbDVjU2d4R3ZTaWVtREE9PQ==) # <-- Put your encrypted keystore alias password here
                 CM_KEY_ALIAS_USERNAME: Encrypted(Z0FBQUFBQmd2Zkhja2lnM2w2Z1Z2ZWNpc05VOUw5WjVkWkdwczVxb2FYUzJiOS1STWNRT21ZdTBuN1EtajRPOHdwOFNrM1dUbjBIMmN3bkN3REdzN24za1l4aGYtOG84eFE9PQ==) # <-- Put your encrypted keystore alias username here 
             node: latest
-        triggering:
+       triggering:
             events:
                 - push
                 - tag
@@ -24,10 +24,10 @@ workflows:
         scripts:
             - name: Install npm dependencies
               script: |
-                                npm install
+                npm install
             - name: Set Android SDK location
               script: |
-                                echo "sdk.dir=$ANDROID_SDK_ROOT" > "$FCI_BUILD_DIR/android/local.properties"
+                echo "sdk.dir=$ANDROID_SDK_ROOT" > "$FCI_BUILD_DIR/android/local.properties"
             - name: Set up keystore
               script: |
                     echo $CM_KEYSTORE | base64 --decode > /tmp/keystore.keystore
@@ -36,22 +36,22 @@ workflows:
                     keyPassword=$CM_KEY_ALIAS_PASSWORD
                     keyAlias=$CM_KEY_ALIAS_USERNAME
                     storeFile=/tmp/keystore.keystore
-                    EOF                                   
+                    EOF               
             - name: Build Android release
               script: |
                 # Set environment variable so it can be used to increment build number in android/app/build.gradle
                 # Note that tracks can be specified when retrieving latest build number from Google Play, for example:
                 # export NEW_BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks=alpha) + 1))
                 export NEW_BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME") + 1))
-                cd android && ./gradlew assembleRelease                
+                cd android && ./gradlew assembleRelease
         artifacts:
             - android/app/build/outputs/**/*.apk
         publishing:
             # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
             email:
                 recipients:
-                    - mahendra.raut@sumasoft.net
                     - saurabh.rajput@sumasoft.net
+                    - mahendra.raut@sumasoft.net
                     - supriya.malusare@sumasoft.net
                 notify:
                   success: true     # To not receive a notification when a build succeeds
@@ -61,7 +61,7 @@ workflows:
               channel: '#channel-name'
               notify_on_build_start: true   # To receive a notification when a build starts
               notify:
-                success: true               # To receive a notification when a build succeeds
+                success: true               # To not receive a notification when a build succeeds
                 failure: false              # To not receive a notification when a build fails
             #google_play:
               # See the following link for information regarding publishing to Google Play - https://docs.codemagic.io/publishing-yaml/distribution/#google-play
