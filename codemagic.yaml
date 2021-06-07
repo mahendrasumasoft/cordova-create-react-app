@@ -50,8 +50,9 @@ workflows:
             # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
             email:
                 recipients:
-                    - user_1@example.com
-                    - user_2@example.com
+                    - mahendra.raut@sumasoft.net
+                    - saurabh.rajput@sumasoft.net
+                    - supriya.malusare@sumasoft.net
                 notify:
                   success: true     # To not receive a notification when a build succeeds
                   failure: false    # To not receive a notification when a build fails
