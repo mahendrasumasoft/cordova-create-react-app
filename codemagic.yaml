@@ -23,7 +23,7 @@ workflows:
                   source: true
         cache:
             cache_paths:
-                - $FCI_BUILD_DIR/node_modules
+              - $FCI_BUILD_DIR/node_modules
         scripts:
             - name: Install npm dependencies
               script: |
