@@ -28,7 +28,7 @@ workflows:
             - name: Cordova Platform
               script: |
                 echo pwd
-                cd cordova-create-react-app && cordova platform add android
+                cd $FCI_BUILD_DIR && cordova platform add android
             - name: Create Apk
               script: |
                 echo "pwd"
