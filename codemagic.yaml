@@ -30,6 +30,7 @@ workflows:
                 #npm install
             - name: Cordova Platform
               script: |
+                set -x
                 cordova platform add android
             - name: Create Apk
               script: |
