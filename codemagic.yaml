@@ -21,14 +21,16 @@ workflows:
                 - pattern: develop
                   include: true
                   source: true
+        cache:
+            cache_paths:
+                - $FCI_BUILD_DIR/node_modules
         scripts:
             - name: Install npm dependencies
               script: |
                 #npm install
             - name: Cordova Platform
               script: |
-                echo pwd
-                cd $FCI_BUILD_DIR && cordova platform add android
+                cordova platform add android
             - name: Create Apk
               script: |
                 echo "pwd"
