@@ -30,7 +30,8 @@ workflows:
                 cordova platform add android
             - name: Create Apk
               script: |
-                cordova run android
+                echo "pwd"
+                cd cordova-create-react-app && cordova run android
             #- name: Set Android SDK location
               #script: |
                 #echo "sdk.dir=$HOME/programs/android-sdk-macosx" > "$FCI_BUILD_DIR/android/local.properties"
