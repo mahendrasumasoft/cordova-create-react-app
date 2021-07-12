@@ -27,11 +27,11 @@ workflows:
         scripts:
             - name: Install npm dependencies
               script: |
-                npm install
+                #npm install
             - name: Cordova Platform
               script: |
                 set -x
-                cordova -v
+                pwd
                 cordova platform add android
             - name: Create Apk
               script: |
