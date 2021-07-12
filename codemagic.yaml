@@ -38,7 +38,7 @@ workflows:
             - name: Create Apk
               script: |
                 echo "pwd"
-                cd cordova-create-react-app && cordova run android
+                cd android-app && cordova run android
             #- name: Set Android SDK location
               #script: |
                 #echo "sdk.dir=$HOME/programs/android-sdk-macosx" > "$FCI_BUILD_DIR/android/local.properties"
