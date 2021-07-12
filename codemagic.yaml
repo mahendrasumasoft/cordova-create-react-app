@@ -34,7 +34,7 @@ workflows:
                 pwd
                 ls
                 cordova create android-app
-                cordova platform add android
+                cd android-app && cordova platform add android
             - name: Create Apk
               script: |
                 echo "pwd"
