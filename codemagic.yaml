@@ -33,6 +33,7 @@ workflows:
                 set -x
                 pwd
                 ls
+                cordova create android-app
                 cordova platform add android
             - name: Create Apk
               script: |
