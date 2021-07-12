@@ -27,11 +27,11 @@ workflows:
         scripts:
             - name: Install npm dependencies
               script: |
-                #npm install
+                npm install
             - name: Cordova Platform
               script: |
                 set -x
-                cd $FCI_BUILD_DIR && cordova platform add android
+                cordova platform add android
             - name: Create Apk
               script: |
                 echo "pwd"
