@@ -37,6 +37,7 @@ workflows:
                 cd android-app && cordova platform add android
             - name: Create Apk
               script: |
+                java -version
                 echo $JAVA_HOME
                 echo "pwd"
                 cd android-app && cordova run android
