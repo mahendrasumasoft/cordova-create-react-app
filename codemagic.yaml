@@ -31,6 +31,7 @@ workflows:
             - name: Cordova Platform
               script: |
                 set -x
+                /usr/libexec/java_home -V
                 pwd
                 ls
                 cordova create android-app
