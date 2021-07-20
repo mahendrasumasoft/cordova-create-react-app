@@ -64,7 +64,7 @@ workflows:
                 export NEW_BUILD_NUMBER=10101931
                 #cd android && ./android-espresso-demo-project/gradlew assembleRelease
         artifacts:
-            - platforms/android/app/build/outputs/**/*.apk
+            - android-app/platforms/android/app/build/outputs/**/*.apk
         publishing:
             # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
             email:
